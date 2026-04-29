@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Sales Mastery | Changeworx</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .bg-changeworx-orange { background-color: #F38120; }
+        .text-changeworx-orange { color: #F38120; }
+        .border-changeworx-orange { border-color: #F38120; }
+        .bg-charcoal { background-color: #2D2D2D; }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .brain-overlay {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 40%;
+            opacity: 0.1;
+            pointer-events: none;
+            animation: pulse-slow 6s infinite ease-in-out;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.05); opacity: 0.15; }
+        }
+
+        .pulse-button {
+            animation: pulse-orange 2s infinite;
+        }
+
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 0 0 rgba(243, 129, 32, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(243, 129, 32, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(243, 129, 32, 0); }
+        }
+
+        .section-padding { padding-top: 80px; padding-bottom: 80px; }
+
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Smooth reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <img src="Changeworx Logo cropped.jpg" alt="Changeworx Logo" class="h-12" onerror="this.src='https://via.placeholder.com/150x50?text=Changeworx'">
+            <div class="hidden md:flex space-x-8 font-semibold text-sm uppercase tracking-wider">
+                <a href="#problem" class="hover:text-changeworx-orange transition">The Problem</a>
+                <a href="#curriculum" class="hover:text-changeworx-orange transition">Curriculum</a>
+                <a href="#trainer" class="hover:text-changeworx-orange transition">About Amit</a>
+                <a href="#apply" class="bg-changeworx-orange text-white px-5 py-2 rounded-full hover:shadow-lg transition">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center hero-gradient text-white pt-20 overflow-hidden">
+        <!-- SVG Brain Overlay -->
+        <svg class="brain-overlay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04zM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"></path>
+        </svg>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Close More Deals.<br>
+                    Influence Effortlessly.<br>
+                    <span class="text-changeworx-orange">Become Unstoppable.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-4 font-light">
+                    Most sales professionals struggle not because of their product… but because they don’t understand the <span class="text-white font-semibold italic">psychology of decision-making.</span>
+                </p>
+                <p class="text-lg text-gray-400 mb-10 max-w-2xl">
+                    In just 2 days, learn how to read people, build instant trust, and close deals with precision using NLP.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#apply" class="bg-changeworx-orange text-center px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl">Apply Now</a>
+                    <a href="#curriculum" class="bg-white/10 backdrop-blur-sm border border-white/20 text-center px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">Reserve Your Seat</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">Why You’re Losing Deals <span class="text-changeworx-orange">(Even When You’re Good)</span></h2>
+                <p class="text-xl text-gray-600 mb-12">You explain well. You follow up. You try your best. Yet:</p>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 text-left">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i data-lucide="x-circle" class="text-red-500"></i>
+                            <span class="font-bold">Clients hesitate</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Decision makers say "let me think" and never return.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 text-left">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i data-lucide="message-square-off" class="text-red-500"></i>
+                            <span class="font-bold">Conversations stall</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Momentum dies after the initial pitch.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 text-left">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i data-lucide="shield-alert" class="text-red-500"></i>
+                            <span class="font-bold">Objections increase</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">Every point you make is met with resistance.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-red-500 text-left">
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i data-lucide="door-closed" class="text-red-500"></i>
+                            <span class="font-bold">Deals don’t close</span>
+                        </div>
+                        <p class="text-gray-500 text-sm">The finish line feels unreachable despite the effort.</p>
+                    </div>
+                </div>
+
+                <div class="bg-charcoal text-white p-10 rounded-3xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-4">What This Is Really Costing You</h3>
+                        <p class="text-gray-400 mb-6">Every missed deal is not just lost money… It’s lost confidence, momentum, and positioning in your market.</p>
+                        <p class="text-changeworx-orange font-bold text-xl">"Someone less skilled—but more influential—is closing your deals."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">The Missing Piece: NLP-Based Sales Mastery</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">This is where everything changes. You’ll learn how to influence decisions without pressure.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 reveal">
+                <div class="text-center p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-changeworx-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="eye" class="text-changeworx-orange"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Read People Beyond Words</h4>
+                    <p class="text-gray-500 text-sm">Decode micro-expressions and body language cues.</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-changeworx-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="text-changeworx-orange"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Build Trust in Minutes</h4>
+                    <p class="text-gray-500 text-sm">Create unconscious rapport that bypasses skepticism.</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-changeworx-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="target" class="text-changeworx-orange"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Guide Conversations</h4>
+                    <p class="text-gray-500 text-sm">Lead the client naturally toward the desired outcome.</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-changeworx-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="brain" class="text-changeworx-orange"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Mental Programming</h4>
+                    <p class="text-gray-500 text-sm">Master your own state of peak performance.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center reveal">
+                <p class="text-2xl font-light italic">"This is what top 1% sales performers do differently."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Breakdown -->
+    <section id="curriculum" class="section-padding bg-charcoal text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">The 2-Day Mastery Roadmap</h2>
+                <p class="text-gray-400">Intensive. Interactive. Immediate results.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 reveal">
+                <!-- Day 1 -->
+                <div class="bg-white/5 border border-white/10 p-10 rounded-3xl hover:border-changeworx-orange transition group">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <span class="text-changeworx-orange font-bold uppercase tracking-widest text-sm">Day 01</span>
+                            <h3 class="text-3xl font-bold mt-2">Influence & Human Connection</h3>
+                        </div>
+                        <i data-lucide="zap" class="text-changeworx-orange group-hover:scale-125 transition"></i>
+                    </div>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Breaking out of comfort zones</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Subconscious communication patterns</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Instant rapport & calibration</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Mental state programming</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Body language & micro-signals</span></li>
+                    </ul>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="bg-white/5 border border-white/10 p-10 rounded-3xl hover:border-changeworx-orange transition group">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <span class="text-changeworx-orange font-bold uppercase tracking-widest text-sm">Day 02</span>
+                            <h3 class="text-3xl font-bold mt-2">Closing & Persuasion Mastery</h3>
+                        </div>
+                        <i data-lucide="award" class="text-changeworx-orange group-hover:scale-125 transition"></i>
+                    </div>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Customer psychology & hidden motivators</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Decision influence frameworks</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Objection handling with precision</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Controlling meetings & outcomes</span></li>
+                        <li class="flex items-center space-x-3"><i data-lucide="check" class="w-5 h-5 text-changeworx-orange"></i> <span>Presenting with emotional impact</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contrast Section -->
+    <section class="section-padding bg-white overflow-x-auto">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold">Average vs NLP-Trained Professional</h2>
+            </div>
+            
+            <div class="max-w-4xl mx-auto min-w-[600px] reveal">
+                <div class="grid grid-cols-3 bg-gray-100 rounded-t-2xl font-bold text-lg">
+                    <div class="p-6">Feature</div>
+                    <div class="p-6 text-gray-500">Average Professional</div>
+                    <div class="p-6 text-changeworx-orange">NLP-Trained Professional</div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-gray-100 items-center">
+                    <div class="p-6 font-bold">Approach</div>
+                    <div class="p-6 text-gray-500">Pushes product features</div>
+                    <div class="p-6 font-semibold bg-changeworx-orange/5">Reads emotions instantly</div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-gray-100 items-center">
+                    <div class="p-6 font-bold">Communication</div>
+                    <div class="p-6 text-gray-500">Talks more, listens less</div>
+                    <div class="p-6 font-semibold bg-changeworx-orange/5">Builds unconscious trust</div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-gray-100 items-center">
+                    <div class="p-6 font-bold">Objections</div>
+                    <div class="p-6 text-gray-500">Reacts with defensiveness</div>
+                    <div class="p-6 font-semibold bg-changeworx-orange/5">Leads decisions naturally</div>
+                </div>
+                <div class="grid grid-cols-3 bg-changeworx-orange/10 rounded-b-2xl items-center">
+                    <div class="p-6 font-bold">Result</div>
+                    <div class="p-6 text-gray-500">Uncertain closing</div>
+                    <div class="p-6 font-bold text-xl text-changeworx-orange">Closes with certainty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold">Real Results from Real Professionals</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 reveal">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 testimonial-card">
+                    <div class="text-changeworx-orange mb-4"><i data-lucide="quote"></i></div>
+                    <p class="font-bold text-lg mb-4">"Closed my biggest deal within 10 days."</p>
+                    <p class="text-gray-500 text-sm">– Real Estate Consultant</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 testimonial-card">
+                    <div class="text-changeworx-orange mb-4"><i data-lucide="quote"></i></div>
+                    <p class="font-bold text-lg mb-4">"My conversions doubled."</p>
+                    <p class="text-gray-500 text-sm">– Insurance Advisor</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 testimonial-card">
+                    <div class="text-changeworx-orange mb-4"><i data-lucide="quote"></i></div>
+                    <p class="font-bold text-lg mb-4">"I finally understand why people buy."</p>
+                    <p class="text-gray-500 text-sm">– Business Owner</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 testimonial-card">
+                    <div class="text-changeworx-orange mb-4"><i data-lucide="quote"></i></div>
+                    <p class="font-bold text-lg mb-4">"Objections don’t scare me anymore."</p>
+                    <p class="text-gray-500 text-sm">– Corporate Sales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authority Section -->
+    <section id="trainer" class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16 reveal">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full border-4 border-changeworx-orange rounded-3xl -z-10"></div>
+                    <img src="295A0155_9.jpg" alt="Amit Pathak" class="rounded-3xl shadow-2xl w-full object-cover h-[500px]" onerror="this.src='https://via.placeholder.com/600x800?text=Amit+Pathak'">
+                </div>
+                <div class="md:w-1/2">
+                    <span class="text-changeworx-orange font-bold uppercase tracking-widest text-sm">Your Mentor</span>
+                    <h2 class="text-4xl font-bold mt-2 mb-6">Meet Your Trainer – Amit Pathak</h2>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Amit Pathak is a leading NLP Trainer and Behavioural Expert who has trained thousands of professionals across industries. His work focuses on sales psychology, human behaviour, and communication mastery.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"><i data-lucide="trending-up" class="w-5 h-5 text-changeworx-orange"></i></div>
+                            <span class="font-semibold text-gray-700">Immediate confidence shifts</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"><i data-lucide="heart" class="w-5 h-5 text-changeworx-orange"></i></div>
+                            <span class="font-semibold text-gray-700">Better client relationships</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center"><i data-lucide="bar-chart" class="w-5 h-5 text-changeworx-orange"></i></div>
+                            <span class="font-semibold text-gray-700">Measurable sales growth</span>
+                        </div>
+                    </div>
+                    <p class="text-lg italic font-light text-gray-500 border-l-4 border-changeworx-orange pl-6">
+                        "Participants experience immediate confidence shifts and measurable sales growth."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Strip -->
+    <div class="py-12 bg-gray-50 border-y border-gray-200 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.2em] mb-10">Trusted by professionals across industries</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale">
+                <span class="font-black text-2xl tracking-tighter">RETAIL</span>
+                <span class="font-black text-2xl tracking-tighter">BANKING</span>
+                <span class="font-black text-2xl tracking-tighter">PHARMA</span>
+                <span class="font-black text-2xl tracking-tighter">AUTOMOBILE</span>
+                <span class="font-black text-2xl tracking-tighter">IT</span>
+            </div>
+            <div class="mt-12 text-center">
+                <p class="text-2xl font-bold text-gray-800">2000+ professionals trained across 15+ sectors</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <section id="apply" class="section-padding bg-charcoal text-white text-center relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto reveal">
+                <span class="inline-block px-4 py-1 bg-changeworx-orange/20 text-changeworx-orange rounded-full text-xs font-bold uppercase mb-6 border border-changeworx-orange/30">Limited Seats Available</span>
+                <h2 class="text-5xl font-bold mb-6">It’s Time to 10X Your Sales</h2>
+                <p class="text-xl text-gray-400 mb-12">
+                    You can continue doing what you’ve always done… or step into a new level of influence, confidence, and results.
+                </p>
+                <div class="flex flex-col items-center">
+                    <a href="#" class="pulse-button bg-changeworx-orange text-white px-16 py-6 rounded-2xl font-bold text-2xl hover:scale-105 transition-all shadow-2xl shadow-changeworx-orange/40 mb-4">Book Your Seat Now</a>
+                    <p class="text-sm text-gray-500">Premium Experience. Personalized Attention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-black text-white border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <img src="Changeworx Logo cropped.jpg" alt="Logo" class="h-10 mb-4 mx-auto md:mx-0 opacity-80" onerror="this.src='https://via.placeholder.com/150x50?text=Changeworx'">
+                    <p class="text-gray-500 text-sm">NLP-Based Sales Mastery Workshop</p>
+                </div>
+                <div class="flex space-x-6 text-gray-400 mb-8 md:mb-0">
+                    <a href="#" class="hover:text-changeworx-orange"><i data-lucide="linkedin"></i></a>
+                    <a href="#" class="hover:text-changeworx-orange"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="hover:text-changeworx-orange"><i data-lucide="facebook"></i></a>
+                </div>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center space-x-2 text-gray-400 hover:text-white transition group">
+                    <span class="text-sm font-bold uppercase tracking-widest">Back to Top</span>
+                    <i data-lucide="arrow-up-circle" class="group-hover:-translate-y-1 transition"></i>
+                </button>
+            </div>
+            <div class="mt-12 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+                &copy; 2024 Changeworx. All rights reserved. NLP Mastery Series.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
